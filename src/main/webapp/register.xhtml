@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Register User JSF</title>
+    </h:head>
+    <h:body style="background-image:url(https://t3.ftcdn.net/jpg/02/24/64/56/360_F_224645618_dtpq1bEjnN67g3gampm39hg698AUC9tf.jpg);background-repeat: no-repeat; background-size: cover;">
+        
+        <center>
+          
+            <h:form>
+                <h1 style="background-color:deeppink;width:180px;font-family:cursive">New Login</h1>
+                <h:panelGrid columns="3">
+                <h:outputLabel for="userName">
+                    <h:outputText style="font-family:cursive;" value="Enter your user name:"/>
+                </h:outputLabel>
+                <h:inputText style="background-color: skyblue;border-color: black" id="userName" value="#{RegBean.userName}" validatorMessage="Please Enter your User Name!">
+                    <f:validateRequired/>
+                </h:inputText><br></br>
+                <h:outputLabel for="password">
+                    <h:outputText style="font-family:cursive;" value="Enter your password:"/>
+                </h:outputLabel>
+                <h:inputSecret style="background-color: skyblue;border-color: black" id="password" value="#{RegBean.password}" requiredMessage="Please Enter your Password!" required="true">
+                    <f:validator validatorId="com.to.user.passwordValidator"/>
+                    <f:attribute name="confirmPassword" value="#{confirmPassword}"/>
+                </h:inputSecret><br></br>
+                <h:outputLabel for="confPassword">
+                    <h:outputText style="font-family:cursive;" value="Confirm your password:"/>
+                </h:outputLabel>
+                <h:inputSecret style="background-color: skyblue;border-color: black" id="confPassword" value="#{RegBean.confPassword}" required="true" binding="#{confirmPassword}" requiredMessage="Confirm your password">
+                </h:inputSecret>
+                <h:message for="confirmPassword" style="color: red;" />
+                <h:outputLabel for="age">
+                    <h:outputText style="font-family:cursive;" value="Enter your age:"/>
+                </h:outputLabel>
+                <h:inputText style="background-color: skyblue;border-color: black" id="age" value="#{RegBean.age}" validatorMessage="Age must be in between 12 and 75!">
+                    <f:validateLongRange maximum="75" minimum="12"/>
+                </h:inputText><br></br>
+                <h:outputLabel for="city">
+                    <h:outputText style="font-family:cursive;" value="Enter your city:"/>
+                </h:outputLabel>
+                <h:inputText style="background-color:skyblue;border-color: black" id="city" value="#{RegBean.city}" validatorMessage="Please Enter your City!">
+                    <f:validateRequired/>
+                </h:inputText><br></br>
+                <h:outputLabel for="email">
+                    <h:outputText style="font-family:cursive;" value="Enter your email:"/>
+                </h:outputLabel>
+                <h:inputText style="background-color: skyblue;border-color: black" id="email" value="#{RegBean.email}" validatorMessage="Invalid Email!">
+                    <f:validateRegex pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$"/>
+                </h:inputText><br></br>
+                <h:outputLabel for="phone">
+                    <h:outputText style="font-family:cursive;" value="Enter your phone:"/>
+                </h:outputLabel>
+                <h:inputText style="background-color: skyblue;border-color: black" id="phone" value="#{RegBean.phone}" validatorMessage="Invalid Phone number!">
+                    <f:validateLength maximum="14" minimum="10"/>
+                    <f:validateRequired/>
+                    <f:converter converterId="PhoneCnvtr"/>
+                </h:inputText><br></br>
+                
+                <h:commandButton value="Submit" action="RegisterUser.jsp" style="display: inline-block;padding: 10px 10px;ont-size:13px;cursor: pointer;text-align: center;text-decoration: none;outline: none;color:black;background-color: #FF1493;border: none;border-radius: 20px;box-shadow: 0 3px #999;font-family:cursive;"/>
+                <h:commandButton value="Cancel" action="register" immediate="true" style="display: inline-block;padding: 10px 10px;ont-size:13px;cursor: pointer;text-align: center;text-decoration: none;outline: none;color:black;background-color: #FF1493;border: none;border-radius: 20px;box-shadow: 0 3px #999;font-family:cursive"/>
+                </h:panelGrid>
+            </h:form>
+           
+        </center>
+    </h:body>
+</html>

@@ -1,0 +1,78 @@
+@import "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
+body{
+  margin:0;
+  padding:0;
+  font-family: sans-serif;
+  background: url(https://png.pngtree.com/thumb_back/fh260/back_our/20190619/ourmid/pngtree-shopping-mall-supermarket-selection-merchandise-poster-background-material-image_133225.jpg);
+  background-size:cover;
+}
+.login-box{
+  width: 280px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  color: black; 
+}
+.login-box h1{
+	float: left;
+	font-size:40px;
+	border-bottom: 6px inset deeppink;
+	margin-bottom:50px;
+	padding: 13px 0;
+}
+.textbox{
+	width:100%;
+	overflow: hidden;
+	font-size:20px;
+	padding: 8px 0;
+	margin:8px 0;
+	border-bottom: 1px solid red;
+}
+.textbox i{
+	width: 26px;
+	float: left;
+	text-align: center;
+}
+.textbox input{
+	border: none;
+	outline: none;
+	background: none;
+	color: black;
+	font-size: 16px;
+	width:80px;
+	float: left;
+	margin:0 10px;
+}
+.btn {
+  display: inline-block;
+  padding: 10px 10px;
+  font-size:13px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #FF1493;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 3px #999;
+}
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:active {
+  text-decoration: underline;
+}
+ul {
+  list-style:url('shoppingcart2.png');
+}
